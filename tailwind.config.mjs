@@ -15,7 +15,7 @@ export default {
       colors: {
         'custom-dark-bg': '#0a2540', // Updated to a darker blue color
         'custom-dark-text': '#e0e0e0', // Your desired dark mode text color
-        'custom-dark-header': '#16213e', // Your desired dark mode header color
+        'custom-dark-header': '#0a2540', // Your desired dark mode header color
       },
     },
   },
