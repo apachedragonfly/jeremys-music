@@ -16,7 +16,7 @@ export default {
         'custom-dark-bg': '#171774', // Your desired dark mode background color
         'custom-dark-text': '#e0e0e0', // Your desired dark mode text color
         'custom-dark-header': '#16213e', // Your desired dark mode header color
-      
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
