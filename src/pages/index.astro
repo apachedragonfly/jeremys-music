@@ -1,10 +1,8 @@
----
 import { getCollection } from "astro:content";
 import Container from "@components/Container.astro";
 import PageLayout from "@layouts/PageLayout.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import Link from "@components/Link.astro";
-import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 
 const blog = (await getCollection("blog"))
@@ -21,31 +19,31 @@ const allwork = (await getCollection("work"))
   .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
   .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
 
-const work = await Promise.all(
-  allwork.map(async (item) => {
-    const { Content } = await item.render();
-    return { ...item, Content };
-  })
-);
-
+// Since work is unused, we can comment it out or remove it
+// const work = await Promise.all(
+//   allwork.map(async (item) => {
+//     const { Content } = await item.render();
+//     return { ...item, Content };
+//   })
+// );
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-<h4 class="animate font-semibold text-black dark:text-white">
-  Hi, I'm Jeremy <span class="text-xl">🇨🇦</span> 
-</h4>
-<div class="space-y-16">
-  <section>
-    <article class="space-y-4">
-      <p class="animate">
-        I'm a nurse by day and night 💉. Any other time I get inbetween, I'm a singer-songwriter 🎸and writer ✍🏻 . I love creating music with Logic Pro and Ableton.
-      </p>
-      <p class="animate">
-        When I'm not making and writing music or helping others, you can find me taking photos 📸, exploring history 📚 and geography 🌎, or losing elo in online chess♟️.
-      </p>
-    </article>
-  </section>
+    <h4 class="animate font-semibold text-black dark:text-white">
+      Hi, I'm Jeremy <span class="text-xl">🇨🇦</span> 
+    </h4>
+    <div class="space-y-16">
+      <section>
+        <article class="space-y-4">
+          <p class="animate">
+            I'm a nurse by day and night 💉. Any other time I get inbetween, I'm a singer-songwriter 🎸and writer ✍🏻 . I love creating music with Logic Pro and Ableton.
+          </p>
+          <p class="animate">
+            When I'm not making and writing music or helping others, you can find me taking photos 📸, exploring history 📚 and geography 🌎, or losing elo in online chess♟️.
+          </p>
+        </article>
+      </section>
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
@@ -96,7 +94,13 @@ const work = await Promise.all(
         <ul class="flex flex-wrap gap-4 mt-4">
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`} class="hover:scale-110 transition-transform">
+              <a 
+                href={SOCIAL.HREF} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                class="hover:scale-110 transition-transform"
+              >
                 {SOCIAL.NAME === 'Twitter' && (
                   <svg class="w-6 h-6 text-black dark:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.897-.959-2.178-1.559-3.594-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124-4.087-.205-7.719-2.165-10.148-5.144-.422.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 14.002-7.496 14.002-13.986 0-.21 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/>
@@ -112,7 +116,7 @@ const work = await Promise.all(
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.5c0-1.378-.028-3.152-1.92-3.152-1.92 0-2.214 1.5-2.214 3.052v5.6h-3v-10h2.88v1.367h.041c.401-.761 1.379-1.56 2.84-1.56 3.039 0 3.6 2 3.6 4.6v5.593z"/>
                   </svg>
                 )}
-              </Link>
+              </a>
             </li>
           ))}
           <li class="line-clamp-1">
