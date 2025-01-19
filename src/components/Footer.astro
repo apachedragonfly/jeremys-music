@@ -114,3 +114,52 @@ import Link from "@components/Link.astro";
     </div>
   </Container>
 </footer>
+
+<script>
+  const lightButton = document.querySelector('#light-theme-button');
+  const darkButton = document.querySelector('#dark-theme-button');
+  const systemButton = document.querySelector('#system-theme-button');
+
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  })();
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  window.localStorage.setItem('theme', theme);
+
+  const handleToggleClick = (theme) => {
+    const element = document.documentElement;
+    switch (theme) {
+      case 'light':
+        element.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        break;
+      case 'dark':
+        element.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        break;
+      default:
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          element.classList.add('dark');
+        } else {
+          element.classList.remove('dark');
+        }
+        localStorage.removeItem('theme');
+    }
+  };
+
+  lightButton?.addEventListener('click', () => handleToggleClick('light'));
+  darkButton?.addEventListener('click', () => handleToggleClick('dark'));
+  systemButton?.addEventListener('click', () => handleToggleClick('system'));
+</script>
