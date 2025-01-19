@@ -6,18 +6,19 @@ interface Props {
   external?: boolean;
   underline?: boolean;
   "aria-label"?: string;
+  class?: string;
   className?: string;
 }
 
-const { href, external, underline = true, className = "" } = Astro.props;
+const { href, external, underline = true, class: className = "" } = Astro.props;
 ---
 
 <a 
+  {...Astro.props}
   href={href}
   target={external ? "_blank" : undefined}
   rel={external ? "noopener noreferrer" : undefined}
   class={className}
-  {...Astro.props}
 >
   <slot />
 </a>
