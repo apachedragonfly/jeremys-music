@@ -43,10 +43,10 @@ export const SOCIALS: Socials = [
   },
   { 
     NAME: "spotify",
-    HREF: "https://open.spotify.com/artist/YourID"
+    HREF: "https://open.spotify.com/artist/6LgLJCfIgQ5VDL8J9F1sfv?si=drTkTADhQNeUb5cf2hii1A"
   },
   { 
     NAME: "music",
-    HREF: "https://music.apple.com/artist/YourID"
+    HREF: "https://music.apple.com/ca/artist/jeremy-craig-saunders/1715078505"
   },
 ];
