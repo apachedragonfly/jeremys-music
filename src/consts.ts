@@ -18,7 +18,7 @@ export const BLOG: Metadata = {
   DESCRIPTION: "Some thoughts on my life and work.",
 };
 
-export const WORK: Metadata = {
+export const LYRICS: Metadata = {
   TITLE: "Lyrics",
   DESCRIPTION: "A collection of my lyrics.",
 };
