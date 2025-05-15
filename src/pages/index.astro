@@ -33,16 +33,16 @@ const work = await Promise.all(
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
 <h4 class="animate font-semibold text-black dark:text-white">
-  Hi, I'm Jeremy <span class="text-xl">🇨🇦</span> 
-</h4>
+  Hey!
 <div class="space-y-16">
   <section>
     <article class="space-y-4">
       <p class="animate">
-        By day and night, I'm a nurse 💉. Any time inbetween, I'm a singer-songwriter 🎸. I love creating music with Logic Pro and Ableton.
-      </p>
-      <p class="animate">
-        When I'm not making music or helping others, you can find me taking photos 📸, exploring history 📚 and geography 🌎, or losing elo in online chess♟️.
+        By day and night, I'm a nurse. <br>
+        Any time inbetween, I'm a singer-songwriter.
+       <br>
+       <br> 
+        You'll find my thoughts, projects, and music here.
       </p>
     </article>
   </section>
@@ -65,23 +65,7 @@ const work = await Promise.all(
         </ul>
       </section>
 
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h5>
-          <Link href="/projects">
-            See all projects
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {projects.map(project => (
-            <li>
-              <ArrowCard entry={project} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      
     </div>
   </Container>
 </PageLayout>
