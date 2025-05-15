@@ -13,9 +13,26 @@ export default {
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
       },
       colors: {
-        'custom-dark-bg': '#080933', // Updated to a darker blue color
-        'custom-dark-text': '#e0e0e0', // Your desired dark mode text color
-        'custom-dark-header': '#080933', // Your desired dark mode header color
+        'custom-dark-bg': '#1E2A23', //
+        'custom-dark-text': '#e0e0e0', // 
+        'custom-dark-header': '#1E2A23', // 
+        'custom-dark-link': '#e0e0e0', // 
+        'custom-dark-hover': '#e0e0e0', // 
+        'custom-dark-active': '#e0e0e0', // 
+        'custom-dark-border': '#e0e0e0', // 
+        'custom-dark-input': '#e0e0e0', // 
+        'custom-dark-button': '#e0e0e0', // 
+        'custom-dark-button-text': '#e0e0e0', // 
+        'custom-light-bg': '#ffffff', // Example light background
+        'custom-light-text': '#333333', // Example light text
+        'custom-light-header': '#f8f8f8', // Example light header
+        'custom-light-link': '#007bff', // Example light link
+        'custom-light-hover': '#0056b3', // Example light link hover
+        'custom-light-active': '#004085', // Example light link active
+        'custom-light-border': '#cccccc', // Example light border
+        'custom-light-input': '#eeeeee', // Example light input
+        'custom-light-button': '#007bff', // Example light button
+        'custom-light-button-text': '#ffffff', // Example light button text
       },
     },
   },
