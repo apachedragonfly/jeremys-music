@@ -5,7 +5,6 @@ export const SITE: Site = {
   EMAIL: "",
   NUM_POSTS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 2,
-  NUM_LYRICS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
@@ -18,7 +17,7 @@ export const BLOG: Metadata = {
   DESCRIPTION: "Some thoughts on my life and work.",
 };
 
-export const LYRICS: Metadata = {
+export const WORK: Metadata = {
   TITLE: "Lyrics",
   DESCRIPTION: "A collection of my lyrics.",
 };
