@@ -49,4 +49,8 @@ export const SOCIALS: Socials = [
     NAME: "music",
     HREF: "https://music.apple.com/ca/artist/jeremy-craig-saunders/1715078505"
   },
+  { 
+    NAME: "youtube",
+    HREF: "https://www.youtube.com/@jeremycraigsaunders"
+  },
 ];

@@ -9,8 +9,11 @@ import {
   faInstagram, 
   faTiktok, 
   faSpotify, 
-  faApple 
+  faApple,
+  faYoutube 
 } from '@fortawesome/free-brands-svg-icons';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="animate">
@@ -22,9 +25,9 @@ import {
     </div>
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-4">
-        <div>
-          &copy; 2024 {`|`} {SITE.NAME}
-        </div>
+        <p class="mb-2 text-sm">
+          &copy; {currentYear}. All rights reserved.
+        </p>
         <div class="flex gap-2">
           {SOCIALS.map(SOCIAL => (
             <Link 
@@ -34,19 +37,22 @@ import {
               className="hover:scale-110 transition-transform"
             >
               {SOCIAL.NAME === 'twitter-x' && (
-                <FontAwesomeIcon icon={faXTwitter} className="h-5 w-5" client:load />
+                <FontAwesomeIcon icon={faXTwitter} className="h-5 w-5" />
               )}
               {SOCIAL.NAME === 'instagram' && (
-                <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" client:load />
+                <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
               )}
               {SOCIAL.NAME === 'tiktok' && (
-                <FontAwesomeIcon icon={faTiktok} className="h-5 w-5" client:load />
+                <FontAwesomeIcon icon={faTiktok} className="h-5 w-5" />
               )}
               {SOCIAL.NAME === 'spotify' && (
-                <FontAwesomeIcon icon={faSpotify} className="h-5 w-5" client:load />
+                <FontAwesomeIcon icon={faSpotify} className="h-5 w-5" />
               )}
               {SOCIAL.NAME === 'music' && (
-                <FontAwesomeIcon icon={faApple} className="h-5 w-5" client:load />
+                <FontAwesomeIcon icon={faApple} className="h-5 w-5" />
+              )}
+              {SOCIAL.NAME === 'youtube' && (
+                <FontAwesomeIcon icon={faYoutube} className="h-5 w-5" />
               )}
             </Link>
           ))}
